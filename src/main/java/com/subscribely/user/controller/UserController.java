@@ -1,10 +1,11 @@
 package com.subscribely.user.controller;
 
-import com.subscribely.user.service.NotificationService;
+import com.subscribely.notification.service.NotificationService;
 import com.subscribely.user.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @RequestMapping("/api/v1/users")
 @RestController
@@ -12,7 +13,7 @@ public class UserController {
     private final UserService userService;
     private final NotificationService notificationService;
 
-    public UserController(UserService userService, NotificationService notificationService) {
+    public UserController(UserService userService,@Qualifier("SmsNotificationService") NotificationService notificationService) {
         this.userService = userService;
         this.notificationService = notificationService;
     }

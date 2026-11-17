@@ -1,0 +1,26 @@
+CATEGORY FUNCTIONALITY
+An admin should be able to:
+- Create a category.
+- View all categories.
+- View a particular category.
+- Update a category.
+- Delete a category.
+- Search categories by name.
+
+CATEGORY ENTITY
+Field	    Data type	        Requirement
+id	        Long	            Primary key, auto-generated
+name	    String	            Mandatory, unique
+description String	            Optional
+active	    Boolean	            Default true
+createdAt	LocalDateTime	    Creation timestamp
+updatedAt	LocalDateTime	    Last updated timestamp
+
+CATEGORY CONTROLLER
+HTTP method	            Endpoint	                    Purpose	            Expected status
+POST	                /api/v1/categories	            Create category	    201
+GET	                    /api/v1/categories	            Get all categories	200
+GET	                    /api/v1/categories/{id}	        Get category by ID	200
+PUT	                    /api/v1/categories/{id}	        Update category	    200
+DELETE	                /api/v1/categories/{id}	        Delete category	    204
+GET	                    /api/v1/categories?name=coffee	Search category	    200

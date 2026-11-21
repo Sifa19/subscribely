@@ -2,8 +2,9 @@ package com.subscribely.order.repository;
 
 import com.subscribely.order.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 @Repository
-public class OrderRepository extends JpaRepository<Order,Long>{
+public interface  OrderRepository extends JpaRepository<Order,Long>{
 
 }

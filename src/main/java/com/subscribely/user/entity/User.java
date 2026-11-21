@@ -2,6 +2,7 @@ package com.subscribely.user.entity;
 
 import com.subscribely.order.entity.Order;
 import com.subscribely.order.entity.OrderStatus;
+import com.subscribely.user.dto.UserRequest;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -49,5 +50,10 @@ public class User{
     public void removeOrder(Order order){
         orders.remove(order);
         order.setOrderStatus(OrderStatus.CANCELLED);
+    }
+
+    public User(UserRequest userRequest){
+        this.username = userRequest.getUsername();
+        this.email = userRequest.getEmail();
     }
 }

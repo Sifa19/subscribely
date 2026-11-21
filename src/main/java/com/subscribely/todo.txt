@@ -24,3 +24,12 @@ GET	                    /api/v1/categories/{id}	        Get category by ID	200
 PUT	                    /api/v1/categories/{id}	        Update category	    200
 DELETE	                /api/v1/categories/{id}	        Delete category	    204
 GET	                    /api/v1/categories?name=coffee	Search category	    200
+
+
+ORDER FUNCTIONALITY
+
+User and Order Relationship:
+    User → Order: One-to-Many.
+    Order → User: Many-to-One.
+    Order → OrderItem: One-to-Many.
+    OrderItem → Order: Many-to-One.
